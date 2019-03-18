@@ -6,6 +6,7 @@ public class TelefonosMoviles extends Producto{
 		super(codigo,nombre,precio,cantidad);
 		this.operador = operador;
 	}
+	public TelefonosMoviles() {};
 	public String getoperador() {
 		return this.operador;
 	}

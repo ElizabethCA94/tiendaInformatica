@@ -6,6 +6,7 @@ public class Ordenador extends Producto{
 		super(codigo,nombre,precio,cantidad);
 		this.caracteristicas = caracteristicas;
 	}
+	public Ordenador() {};
 	public String getCaracteristicas(){
 		return this.caracteristicas;
 	}
