@@ -16,23 +16,18 @@ public class tiendaInformatica {
 		HashMap<String, Producto> listaProductos = new HashMap<String, Producto>();	
 		int opcionElegida = 0, opcionProducto=0, cantidad=0;
 		String codigo = null;
-		Producto producto = new Producto();
-		//Producto ordenador = new Ordenador();
+		Producto producto;
 		while(opcionProducto !=3) {
 			opcionElegida = 0;
-			opcionProducto = Integer.parseInt(JOptionPane.showInputDialog("Selecciona el tipo de producto : \n 1.Ordenador \n 2.Telefonos Moviles \n 3.Salir"));
+			opcionProducto = Integer.parseInt(JOptionPane.showInputDialog("Selecciona el tipo de producto: \n 1.Ordenador \n 2.Telefonos Moviles \n 3.Salir"));
 			switch(opcionProducto) {
 			case 1:
 				while(opcionElegida != 6) {
 					opcionElegida = Integer.parseInt(JOptionPane.showInputDialog("Introduce la entrada que quieras: \n 1.Introducir productos \n 2.Eliminar productos \n 3.Consulta de productos \n 4.Venta de productos \n 5.Modificar productos \n 6.Salir"));
 					switch(opcionElegida) {
 					case 1:
-						Ordenador ordenador = new Ordenador();
 						codigo = JOptionPane.showInputDialog("Ingrese el codigo del producto");
-						producto.setNombre(JOptionPane.showInputDialog("Ingrese el nombre del producto"));
-						producto.setPrecio(Float.parseFloat(JOptionPane.showInputDialog("Ingrese el precio del producto" )));
-						producto.setCantidad(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad del producto")));
-						ordenador.setCaracteristicas(JOptionPane.showInputDialog("Ingrese las caracteristicas del producto"));
+						producto = new Ordenador(codigo, JOptionPane.showInputDialog("Ingrese el nombre del producto"), Float.parseFloat(JOptionPane.showInputDialog("Ingrese el precio del producto")),Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad del producto")), JOptionPane.showInputDialog("Ingrese las caracteristicas del producto"));
 						guardarProducto(codigo, producto, listaProductos);
 						break;
 					case 2:
@@ -60,9 +55,8 @@ public class tiendaInformatica {
 					switch(opcionElegida) {
 					case 1:
 						codigo = JOptionPane.showInputDialog("Ingrese el codigo del producto");
-						producto.setNombre(JOptionPane.showInputDialog("Ingrese el nombre del producto"));
-						producto.setPrecio(Float.parseFloat(JOptionPane.showInputDialog("Ingrese el precio del producto" )));
-						producto.setCantidad(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad del producto")));
+						producto = new TelefonosMoviles(codigo, JOptionPane.showInputDialog("Ingrese el nombre del producto"), Float.parseFloat(JOptionPane.showInputDialog("Ingrese el precio del producto")), Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad del producto")), JOptionPane.showInputDialog("Ingrese el proveedor del producto"));
+						
 						guardarProducto(codigo, producto, listaProductos);
 						break;
 					case 2:
