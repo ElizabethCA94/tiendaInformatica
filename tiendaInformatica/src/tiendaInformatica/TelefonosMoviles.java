@@ -13,4 +13,8 @@ public class TelefonosMoviles extends Producto{
 	public void setOperador(String operador) {
 		this.operador = operador;
 	}
+	
+	public String toString() {
+		return "Nombre: " + this.getNombre() + "Precio: " + this.getPrecio() + "Cantidad: " + this.getCantidad() + "Operador: " + this.operador;
+	}
 }

@@ -14,4 +14,8 @@ public class Ordenador extends Producto{
 	public void setCaracteristicas(String caracteristicas) {
 		this.caracteristicas = caracteristicas;
 	}
+	
+	public String toString() {
+		return "Nombre: " + this.getNombre() + "Precio: " + this.getPrecio() + "Cantidad: " + this.getCantidad() + "Caracteristicas: " + this.caracteristicas;
+	}
 }
